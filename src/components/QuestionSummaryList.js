@@ -1,5 +1,6 @@
 import React, { Component } from 'react'
 import { connect } from 'react-redux'
+import QuestionSummary from './QuestionSummary'
 
 class QuestionSummaryList extends Component {
   render() {
@@ -7,7 +8,7 @@ class QuestionSummaryList extends Component {
       <ul>Question Summary List
         {(this.props.questionIds.map((id) => (
           <ul key={id}>
-            <h6>{id}</h6>
+            <QuestionSummary id={id} />
           </ul>
         )))}
       </ul>
