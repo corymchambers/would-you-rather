@@ -1,15 +1,96 @@
-.summary-list-container {
-  max-width: 600px;
+:root {
+  --cerulean-color: #007EA7;
+  --light-blue-color: #00A8E8;
+  --prussian-blue-color: #003459;
+  --black-color: #00171F;
+  --white-color: #FFF;
+
+  --br: 5px;
+}
+body {
+  font-family: Verdana, Geneva, Tahoma, sans-serif;
+  background: var(--white-color)
+}
+.summary-list-btns-container {
+  max-width: 400px;
+  border: 1px solid var(--black-color);
+  border-radius: var(--br);
   margin: 0 auto;
 }
+.summary-list-container {
+  padding: 10px;
+}
 .summary-container {
-  border: 1px solid gray;
+  border: 1px solid var(--black-color);
+  border-radius: var(--br);
+}
+.summary-container:not(:first-child) {
+  margin-top: 10px;
+}
+.btn {
+  width: 50%;
+  height: 50px;
+  color: var(--prussian-blue-color);
+  background: var(--white-color);
+  font-weight: bold;
+  border: 0;
+  font-size: 13px;
+}
+.btn-unanswer {
+  border-bottom: 1px solid var(--black-color);
+  border-right: 1px solid var(--black-color);
+  border-top-left-radius: var(--br);
+}
+.btn-answer {
+  border-bottom: 1px solid var(--black-color);
+  border-top-right-radius: var(--br);
+}
+.active-list-toggle-btn {
+  background: var(--light-blue-color);
+}
+.summary-author {
+  border-bottom: 1px solid var(--black-color);
+  font-weight: bold;
+  font-size: 13px;
+  padding: 10px;
+  background: var(--light-blue-color);
+  color: var(--black-color);
+}
+.summary-bottom-container {
+  padding: 10px;
+  display: flex;
+  align-items: center;
+}
+.summary-avatar-container {
+  width: calc(30% - 1px);
+  display: inline-block;
+  border-right: 1px solid var(--black-color);
 }
 .avatar {
   height: 50px;
   width: 50px;
+  display: block;
+  margin: 0 auto;
 }
-.active-list-toggle-btn {
-  background: gray;
-  border: 1px solid black
+.summary-question-link-container {
+  width: calc(70% - 10px);
+  display: inline-block;
+  margin-left: 10px;
+}
+.view-full-btn {
+  border: 1px solid var(--black-color);
+  border-radius: var(--br);
+  height: 30px;
+  width: 90%;
+  margin: 5px auto;
+  display: block;
+}
+.would-you-rather {
+  font-weight: bold;
+  font-size: 12px;
+  margin: 2px 0;
+}
+.wyr-question-partial {
+  font-size: 12px;
+  margin: 8px 0;
 }

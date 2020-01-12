@@ -22,19 +22,21 @@ class QuestionSummaryList extends Component {
     const { tab } = this.state
 
     return (
-      <div className='summary-list-container'>
-        <button className={(tab === 'unanswered' ? 'active-list-toggle-btn' : '')} onClick={this.handleTabClick}>Unaswered Questions</button>
-        <button className={(tab === 'answered' ? 'active-list-toggle-btn' : '')} onClick={this.handleTabClick}>Answered Questions</button>
-        {tab === 'unanswered' &&
-          unanswered.map((id) => (
-            <QuestionSummary key={id} id={id} />
-          ))
-        }
-        {tab === 'answered' &&
-          answered.map((id) => (
-            <QuestionSummary key={id} id={id} />
-          ))
-        }
+      <div className='summary-list-btns-container'>
+        <button className={`btn btn-unanswer ${(tab === 'unanswered' ? 'active-list-toggle-btn' : '')}`} onClick={this.handleTabClick}>Unanswered Questions</button>
+        <button className={`btn btn-answer${(tab === 'answered' ? 'active-list-toggle-btn' : '')}`} onClick={this.handleTabClick}>Answered Questions</button>
+        <div class="summary-list-container">
+          {tab === 'unanswered' &&
+            unanswered.map((id) => (
+              <QuestionSummary key={id} id={id} />
+            ))
+          }
+          {tab === 'answered' &&
+            answered.map((id) => (
+              <QuestionSummary key={id} id={id} />
+            ))
+          }
+        </div>
       </div>
     )
   }
