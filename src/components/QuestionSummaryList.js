@@ -25,7 +25,7 @@ class QuestionSummaryList extends Component {
       <div className='summary-list-btns-container'>
         <button className={`btn btn-unanswer ${(tab === 'unanswered' ? 'active-list-toggle-btn' : '')}`} onClick={this.handleTabClick}>Unanswered Questions</button>
         <button className={`btn btn-answer${(tab === 'answered' ? 'active-list-toggle-btn' : '')}`} onClick={this.handleTabClick}>Answered Questions</button>
-        <div class="summary-list-container">
+        <div className="summary-list-container">
           {tab === 'unanswered' &&
             unanswered.map((id) => (
               <QuestionSummary key={id} id={id} />

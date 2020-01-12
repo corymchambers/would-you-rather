@@ -2,6 +2,7 @@ import React, { Component } from 'react';
 import { connect } from 'react-redux'
 import { handleInitialData } from '../actions/shared'
 import QuestionSummaryList from './QuestionSummaryList'
+import LoadingBar from 'react-redux-loading'
 
 class App extends Component {
   // When this component mounts we want to dispatch the invocation of our handleInitialData action creator
@@ -11,6 +12,7 @@ class App extends Component {
   render () {
     return (
       <div>
+        <LoadingBar />
         {this.props.loading
           ? null
           : <QuestionSummaryList />
