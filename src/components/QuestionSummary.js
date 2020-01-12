@@ -4,22 +4,37 @@ import { formatQuestion } from '../utils/helpers'
 
 class QuestionSummary extends Component {
   render() {
-    console.log(this.props)
-    const { id } = this.props
+    const { id, question, users } = this.props
+    const author = question.author
+    const avatarURL = users[author].avatarURL
+    const text = question.optionOne.text.substring(0, 15) + '...'
+    // console.log()
     return (
-      <div>Question Summary {id}</div>
+      <div className='summary-container'>
+        <div>{author} asks:</div>
+        <img
+          src={avatarURL}
+          alt={`Avatar of ${author}`}
+          className='avatar'
+        />
+        <div>Would you rather</div>
+        <div>{text}</div>
+        <button>View Full Link</button>
+
+      </div>
     )
   }
 }
 
 // What state does this component actually need from our redux store?
-function mapStateToProps({authedUser, questions}, {id}) {
+// The id comes from list component that passes id as a prop to the Question Summary component
+function mapStateToProps({users, questions}, {id}) {
   const question = questions[id]
 
   // Now we pass the QuestionSummary component any data it wants
   return {
-    authedUser,
-    question: formatQuestion( question.optionOne.text, question.optionTwo.text, question.author)
+    users,
+    question: question
   }
 }
 

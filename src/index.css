@@ -1,0 +1,15 @@
+.summary-list-container {
+  max-width: 600px;
+  margin: 0 auto;
+}
+.summary-container {
+  border: 1px solid gray;
+}
+.avatar {
+  height: 50px;
+  width: 50px;
+}
+.active-list-toggle-btn {
+  background: gray;
+  border: 1px solid black
+}
