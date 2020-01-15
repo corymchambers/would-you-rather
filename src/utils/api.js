@@ -23,6 +23,6 @@ export function saveQuestion (question) {
   return _saveQuestion(question)
 }
 
-export function saveQuestionAnswer (question, answer) {
-  return _saveQuestionAnswer(question, answer)
+export function saveQuestionAnswer (info) {
+  return _saveQuestionAnswer(info)
 }

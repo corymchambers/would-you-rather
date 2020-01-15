@@ -1,6 +1,6 @@
 import React, { Component } from 'react'
 import { connect } from 'react-redux'
-import { formatQuestion } from '../utils/helpers'
+import { Link, withRouter } from 'react-router-dom'
 
 class QuestionSummary extends Component {
   render() {
@@ -9,7 +9,6 @@ class QuestionSummary extends Component {
     const authorName = users[author].name
     const avatarURL = users[author].avatarURL
     const text = question.optionOne.text.substring(0, 15)
-    // console.log()
     return (
       <div className='summary-container'>
         <div className='summary-author'>{authorName} asks:</div>
@@ -18,13 +17,15 @@ class QuestionSummary extends Component {
             <img
               src={avatarURL}
               alt={`Avatar of ${author}`}
-              className='avatar'
+              className='avatar avatar-small'
             />
           </div>
           <div className='summary-question-link-container'>
             <div className='would-you-rather'>Would you rather</div>
             <div className='wyr-question-partial'>...{text}...</div>
-            <button className='btn view-full-btn'>View Full Link</button>
+            <Link to={`/questions/${id}`} className='link'>
+              <button className='btn view-full-btn'>View Full Link</button>
+            </Link>
           </div>
         </div>
       </div>
@@ -34,7 +35,7 @@ class QuestionSummary extends Component {
 
 // What state does this component actually need from our redux store?
 // The id comes from list component that passes id as a prop to the Question Summary component
-function mapStateToProps({users, questions}, {id}) {
+function mapStateToProps({authedUser, users, questions}, {id}) {
   const question = questions[id]
 
   // Now we pass the QuestionSummary component any data it wants
@@ -44,4 +45,4 @@ function mapStateToProps({users, questions}, {id}) {
   }
 }
 
-export default connect(mapStateToProps)(QuestionSummary)
+export default withRouter(connect(mapStateToProps)(QuestionSummary))

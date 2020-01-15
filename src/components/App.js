@@ -1,8 +1,11 @@
-import React, { Component } from 'react';
+import React, { Component, Fragment } from 'react';
+import { BrowserRouter as Router, Route } from 'react-router-dom'
 import { connect } from 'react-redux'
 import { handleInitialData } from '../actions/shared'
 import QuestionSummaryList from './QuestionSummaryList'
 import LoadingBar from 'react-redux-loading'
+import Nav from './Nav'
+import Question from './Question'
 
 class App extends Component {
   // When this component mounts we want to dispatch the invocation of our handleInitialData action creator
@@ -11,13 +14,21 @@ class App extends Component {
   }
   render () {
     return (
-      <div>
-        <LoadingBar />
-        {this.props.loading
-          ? null
-          : <QuestionSummaryList />
-        }
-      </div>
+      <Router>
+        <Fragment>
+          <LoadingBar />
+          <div className='container'>
+            <Nav />
+            {this.props.loading
+              ? null
+              : <div>
+                  <Route path='/' exact component={QuestionSummaryList} />
+                  <Route path='/questions/:id' exact component={Question} />
+                </div>
+            }
+          </div>
+        </Fragment>
+      </Router>
     )
   }
 }

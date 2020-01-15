@@ -11,11 +11,16 @@ body {
   font-family: Verdana, Geneva, Tahoma, sans-serif;
   background: var(--white-color)
 }
-.summary-list-btns-container {
+.link {
+  text-decoration: none;
+}
+.container {
   max-width: 400px;
+  margin: 0 auto;
+}
+.summary-list-btns-container {
   border: 1px solid var(--black-color);
   border-radius: var(--br);
-  margin: 0 auto;
 }
 .summary-list-container {
   padding: 10px;
@@ -67,10 +72,14 @@ body {
   border-right: 1px solid var(--black-color);
 }
 .avatar {
-  height: 50px;
-  width: 50px;
+  height: 100px;
+  width: 100px;
   display: block;
   margin: 0 auto;
+}
+.avatar-small {
+  height: 50px;
+  width: 50px;
 }
 .summary-question-link-container {
   width: calc(70% - 10px);
@@ -93,4 +102,70 @@ body {
 .wyr-question-partial {
   font-size: 12px;
   margin: 8px 0;
+}
+.result-container {
+  border: 1px solid var(--black-color);
+  border-radius: var(--br);
+  margin: 5px 0;
+  position: relative;
+}
+.results-header {
+  margin: 0;
+}
+.your-vote {
+  border: 1px solid var(--prussian-blue-color);
+  border-radius: 25px;
+  width: 30px;
+  position: absolute;
+  right: -10px;
+  top: -10px;
+  background: var(--prussian-blue-color);
+  color: var(--white-color);
+  font-size: 12px;
+  padding: 5px;
+}
+.progress-container {
+  padding: 0 15px;
+}
+progress {
+  text-align: center;
+  height: 1.5em;
+  width: 100%;
+  -webkit-appearance: none;
+  border: none;
+  position:relative;
+}
+progress:before {
+  content: attr(data-label);
+  font-size: 0.8em;
+  vertical-align: 0;
+  color: var(--white-color);
+  position:absolute;
+  left:0;
+  right:0;
+}
+progress::-webkit-progress-bar {
+  background-color: #c9c9c9;
+  border-radius: 5px;
+}
+progress::-webkit-progress-value {
+  background-color: var(--light-blue-color);
+  border-radius: 5px;
+}
+progress::-moz-progress-bar {
+  background-color: var(--light-blue-color);
+  border-radius: 5px;
+}
+.results-text {
+  color: var(--black-color);
+  font-size: 13px;
+  font-weight: bold;
+  padding: 5px 30px 5px 5px;
+}
+.result-avatar-container {
+  width: calc(30% - 1px);
+  display: flex;
+  border-right: 1px solid var(--black-color);
+  height: 200px;
+  align-items: center;
 }

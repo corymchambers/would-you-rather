@@ -1,5 +1,6 @@
 // this will be the action type when we recieve and dispatch all of the questions to update our store
 export const RECEIVE_QUESTIONS = 'RECEIVE_QUESTIONS'
+export const ANSWER_QUESTION = 'ANSWER_QUESTION'
 
 // receive questions action creator
 export function receiveQuestions (questions) {
@@ -8,3 +9,13 @@ export function receiveQuestions (questions) {
     questions
   }
 }
+
+export function answerQuestion ({id, authedUser, answer}) {
+  return {
+    type: ANSWER_QUESTION,
+    id,
+    authedUser,
+    answer
+  }
+}
+

@@ -1,7 +1,6 @@
 import React, { Component } from 'react'
 import { connect } from 'react-redux'
 import QuestionSummary from './QuestionSummary'
-import { getState } from 'expect/build/jestMatchersObject'
 
 class QuestionSummaryList extends Component {
   state = {
