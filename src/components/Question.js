@@ -36,7 +36,6 @@ class Question extends Component {
 
     // Is question already answered? Instead call in Result component
     if (toResult === true || alreadyAnswered === true) {
-      console.log('show result')
       return <Result id={id} />
     }
 

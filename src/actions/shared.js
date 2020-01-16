@@ -2,10 +2,10 @@ import { getInitialData, saveQuestionAnswer } from '../utils/api'
 import { receiveUsers } from '../actions/users'
 import { receiveQuestions, answerQuestion } from '../actions/questions'
 import { updateUserAnswers } from '../actions/users'
-import { authedUser, setAuthedUser } from '../actions/authedUser'
+import { setAuthedUser } from '../actions/authedUser'
 import { showLoading, hideLoading } from 'react-redux-loading'
 
-const AUTHED_ID = 'tylermcginnis'
+const AUTHED_ID = null
 
 export function handleInitialData () {
   //uses redux thunk pattern because this makes async request inside of this function

@@ -6,6 +6,9 @@ import QuestionSummaryList from './QuestionSummaryList'
 import LoadingBar from 'react-redux-loading'
 import Nav from './Nav'
 import Question from './Question'
+import Login from './Login'
+import NoMatch from './NoMatch'
+import { Redirect } from 'react-router-dom'
 
 class App extends Component {
   // When this component mounts we want to dispatch the invocation of our handleInitialData action creator
@@ -18,13 +21,21 @@ class App extends Component {
         <Fragment>
           <LoadingBar />
           <div className='container'>
-            {this.props.loading
-              ? null
-              : <div>
+            {this.props.authedUser === null
+              ? <div>
                   <Nav authedUser={this.props.authedUser} users={this.props.users} />
-                  <Route path='/' exact component={QuestionSummaryList} />
-                  <Route path='/questions/:id' exact component={Question} />
+                  <Login />
                 </div>
+              : this.props.loading
+                ? null
+                : <div>
+                    {/* <Redirect to='/' /> */}
+                    <Nav authedUser={this.props.authedUser} users={this.props.users} />
+                    <Route path='/' exact component={QuestionSummaryList} />
+                    <Route path='/questions/:id' exact component={Question} />
+                    <Route path='/login' exact component={Login} />
+                    <Route component={NoMatch} />
+                  </div>
             }
           </div>
         </Fragment>

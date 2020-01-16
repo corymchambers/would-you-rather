@@ -193,3 +193,35 @@ progress::-moz-progress-bar {
   height: 200px;
   align-items: center;
 }
+.sm-header-text {
+  font-weight: 100;
+  font-size: 10px;
+}
+.tac {
+  text-align: center;
+}
+.login-body {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+.react-img {
+  max-width: 100px;
+  margin: 10px;
+}
+.signin-text {
+  color: var(--cerulean-color);
+  font-weight: bold;
+  margin: 10px;
+}
+.user-select {
+  width: 90%;
+  margin: 10px;
+}
+.login-btn {
+  background: var(--light-blue-color);
+  width: 90%;
+  margin: 10px;
+  height: 30px;
+  border-radius: var(--br);
+}
