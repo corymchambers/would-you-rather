@@ -18,10 +18,10 @@ class App extends Component {
         <Fragment>
           <LoadingBar />
           <div className='container'>
-            <Nav />
             {this.props.loading
               ? null
               : <div>
+                  <Nav authedUser={this.props.authedUser} users={this.props.users} />
                   <Route path='/' exact component={QuestionSummaryList} />
                   <Route path='/questions/:id' exact component={Question} />
                 </div>
@@ -33,9 +33,11 @@ class App extends Component {
   }
 }
 
-function mapStateToProps ({authedUser }) {
+function mapStateToProps ({authedUser, users }) {
   return {
-    loading: authedUser === null
+    loading: authedUser === null,
+    authedUser,
+    users
   }
 }
 

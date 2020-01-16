@@ -1,7 +1,6 @@
 import React, { Component } from 'react'
 import { connect } from 'react-redux'
 import { handleAnswerQuestion } from '../actions/shared'
-import { Redirect } from 'react-router-dom'
 import Result from './Result'
 
 class Question extends Component {
@@ -24,9 +23,6 @@ class Question extends Component {
       answer: answerSelected,
       authedUser
     }))
-
-    // Todo: route to results on submit
-    //Need to finish styling and possibly rename styles used by multiple components
   }
 
   render() {
@@ -98,7 +94,6 @@ function mapStateToProps ({authedUser, users, questions}, props) {
     authedUser,
     alreadyAnswered
   }
-
 }
 
 export default connect(mapStateToProps)(Question)

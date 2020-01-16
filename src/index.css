@@ -14,13 +14,31 @@ body {
 .link {
   text-decoration: none;
 }
+.nav {
+  max-width: 800px;
+  display: flex;
+  justify-content: space-between;
+  margin: 0 auto;
+}
+.nav-links, .profile-links {
+  display: flex;
+  justify-content: space-between;
+}
+.nav-links > div, .profile-links > div {
+  margin-right: 30px;
+}
+.nav-links > div > a {
+  text-decoration: none;
+}
 .container {
-  max-width: 400px;
+  max-width: 800px;
   margin: 0 auto;
 }
 .summary-list-btns-container {
   border: 1px solid var(--black-color);
   border-radius: var(--br);
+  max-width: 400px;
+  margin: 0 auto;
 }
 .summary-list-container {
   padding: 10px;
@@ -28,6 +46,8 @@ body {
 .summary-container {
   border: 1px solid var(--black-color);
   border-radius: var(--br);
+  max-width: 400px;
+  margin: 0 auto;
 }
 .summary-container:not(:first-child) {
   margin-top: 10px;
@@ -80,6 +100,10 @@ body {
 .avatar-small {
   height: 50px;
   width: 50px;
+}
+.avatar-xs {
+  height: 30px;
+  width: 30px;
 }
 .summary-question-link-container {
   width: calc(70% - 10px);
