@@ -1,5 +1,5 @@
 import React, { Component, Fragment } from 'react';
-import { BrowserRouter as Router, Route } from 'react-router-dom'
+import { BrowserRouter as Router, Route, Switch } from 'react-router-dom'
 import { connect } from 'react-redux'
 import { handleInitialData } from '../actions/shared'
 import QuestionSummaryList from './QuestionSummaryList'
@@ -30,14 +30,15 @@ class App extends Component {
               : this.props.loading
                 ? null
                 : <div>
-                    {/* <Redirect to='/' /> */}
                     <Nav authedUser={this.props.authedUser} users={this.props.users} />
-                    <Route path='/' exact component={QuestionSummaryList} />
-                    <Route path='/questions/:id' exact component={Question} />
-                    <Route path='/login' exact component={Login} />
-                    <Route path='/add' exact component={NewQuestion} />
-                    <Route path='/leaderboard' exact component={LeaderBoard} />
-                    <Route path='/no-match' exact component={NoMatch} />
+                    <Switch>
+                      <Route path='/' exact component={QuestionSummaryList} />
+                      <Route path='/questions/:id' exact component={Question} />
+                      <Route path='/login' exact component={Login} />
+                      <Route path='/add' exact component={NewQuestion} />
+                      <Route path='/leaderboard' exact component={LeaderBoard} />
+                      <Route component={NoMatch} />]
+                    </Switch>
                   </div>
             }
           </div>

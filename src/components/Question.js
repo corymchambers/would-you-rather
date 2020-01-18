@@ -28,7 +28,7 @@ class Question extends Component {
 
   render() {
     if (this.props.redirect === true) {
-      return <Redirect to='/no-match' />
+      return <Redirect to='/' />
     }
     const { question, author, users, alreadyAnswered } = this.props
     const id = question.id
