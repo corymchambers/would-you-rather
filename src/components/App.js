@@ -8,7 +8,8 @@ import Nav from './Nav'
 import Question from './Question'
 import Login from './Login'
 import NoMatch from './NoMatch'
-import { Redirect } from 'react-router-dom'
+import NewQuestion from './NewQuestion'
+import LeaderBoard from './LeaderBoard'
 
 class App extends Component {
   // When this component mounts we want to dispatch the invocation of our handleInitialData action creator
@@ -34,7 +35,9 @@ class App extends Component {
                     <Route path='/' exact component={QuestionSummaryList} />
                     <Route path='/questions/:id' exact component={Question} />
                     <Route path='/login' exact component={Login} />
-                    <Route component={NoMatch} />
+                    <Route path='/add' exact component={NewQuestion} />
+                    <Route path='/leaderboard' exact component={LeaderBoard} />
+                    <Route path='/no-match' exact component={NoMatch} />
                   </div>
             }
           </div>

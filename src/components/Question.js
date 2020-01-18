@@ -2,6 +2,7 @@ import React, { Component } from 'react'
 import { connect } from 'react-redux'
 import { handleAnswerQuestion } from '../actions/shared'
 import Result from './Result'
+import { Redirect } from 'react-router-dom'
 
 class Question extends Component {
   state = {
@@ -26,6 +27,9 @@ class Question extends Component {
   }
 
   render() {
+    if (this.props.redirect === true) {
+      return <Redirect to='/no-match' />
+    }
     const { question, author, users, alreadyAnswered } = this.props
     const id = question.id
     const authorName = users[author.id].name
@@ -48,7 +52,7 @@ class Question extends Component {
               <img
                 src={avatarURL}
                 alt={`Avatar of ${author}`}
-                className='avatar'
+                className='lb-avatar'
               />
             </div>
           </div>
@@ -81,17 +85,26 @@ class Question extends Component {
 //Will need questions, authedUser, users
 function mapStateToProps ({authedUser, users, questions}, props) {
   const { id } = props.match.params
-
   const question = questions[id]
-  const author = users[question.author]
-  const alreadyAnswered = Object.keys(users[authedUser].answers).includes(id)
+  let redirect = false
+  let author = ''
+  let alreadyAnswered = ''
+  if (typeof question === 'undefined') {
+    redirect = true
+    author = ''
+    alreadyAnswered = ''
+  } else {
+    author = users[question.author]
+    alreadyAnswered = Object.keys(users[authedUser].answers).includes(id)
+  }
 
   return {
     question,
     author,
     users,
     authedUser,
-    alreadyAnswered
+    alreadyAnswered,
+    redirect
   }
 }
 

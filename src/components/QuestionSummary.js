@@ -8,7 +8,7 @@ class QuestionSummary extends Component {
     const author = question.author
     const authorName = users[author].name
     const avatarURL = users[author].avatarURL
-    const text = question.optionOne.text.substring(0, 15)
+    const text = (typeof question.optionOne.text !== 'undefined') ? question.optionOne.text.substring(0, 15) : ''
     return (
       <div className='summary-container'>
         <div className='summary-author'>{authorName} asks:</div>

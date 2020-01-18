@@ -1,4 +1,4 @@
-import { RECEIVE_QUESTIONS, ANSWER_QUESTION } from '../actions/questions'
+import { RECEIVE_QUESTIONS, ANSWER_QUESTION, NEW_QUESTION } from '../actions/questions'
 
 export default function questions (state = {}, action) {
   switch(action.type) {
@@ -18,6 +18,13 @@ export default function questions (state = {}, action) {
             }
           }
         }
+      case NEW_QUESTION: {
+        //ned to merge questions
+        return {
+          ...state,
+          [action.question.id]: action.question
+        }
+      }
       default:
         return state
   }
