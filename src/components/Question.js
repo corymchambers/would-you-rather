@@ -44,10 +44,10 @@ class Question extends Component {
     }
 
     return (
-      <div className='summary-container'>
-        <div className='summary-author'>{authorName} asks:</div>
-        <div className='summary-bottom-container'>
-          <div className='summary-avatar-container'>
+      <div className='content-container'>
+        <div className='container-header'>{authorName} asks:</div>
+        <div className='container-bottom-container'>
+          <div className='container-avatar-container'>
             <div className='image-container'>
               <img
                 src={avatarURL}
@@ -56,7 +56,7 @@ class Question extends Component {
               />
             </div>
           </div>
-          <div className='summary-question-link-container'>
+          <div className='container-question-link-container'>
             <div className='would-you-rather-big'>Would you rather...</div>
             <form className='' onSubmit={this.handleSubmit}>
               <div>

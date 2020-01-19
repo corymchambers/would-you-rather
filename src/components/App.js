@@ -10,6 +10,7 @@ import Login from './Login'
 import NoMatch from './NoMatch'
 import NewQuestion from './NewQuestion'
 import LeaderBoard from './LeaderBoard'
+import Logout from './Logout'
 
 class App extends Component {
   // When this component mounts we want to dispatch the invocation of our handleInitialData action creator
@@ -35,6 +36,7 @@ class App extends Component {
                       <Route path='/' exact component={QuestionSummaryList} />
                       <Route path='/questions/:id' exact component={Question} />
                       <Route path='/login' exact component={Login} />
+                      <Route path='/logout' exact component={Logout} />
                       <Route path='/add' exact component={NewQuestion} />
                       <Route path='/leaderboard' exact component={LeaderBoard} />
                       <Route component={NoMatch} />]

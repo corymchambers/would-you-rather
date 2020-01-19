@@ -1,3 +1,4 @@
+/* Site wide styles */
 :root {
   --cerulean-color: #007EA7;
   --light-blue-color: #00A8E8;
@@ -7,51 +8,16 @@
 
   --br: 5px;
 }
+
 body {
   font-family: Verdana, Geneva, Tahoma, sans-serif;
   background: var(--white-color)
 }
+
 .link {
   text-decoration: none;
 }
-.nav {
-  max-width: 800px;
-  display: flex;
-  justify-content: space-between;
-  margin: 0 auto;
-}
-.nav-links, .profile-links {
-  display: flex;
-  justify-content: space-between;
-}
-.nav-links > div, .profile-links > div {
-  margin-right: 30px;
-}
-.nav-links > div > a {
-  text-decoration: none;
-}
-.container {
-  max-width: 800px;
-  margin: 0 auto;
-}
-.summary-list-btns-container {
-  border: 1px solid var(--black-color);
-  border-radius: var(--br);
-  max-width: 400px;
-  margin: 0 auto;
-}
-.summary-list-container {
-  padding: 10px;
-}
-.summary-container {
-  border: 1px solid var(--black-color);
-  border-radius: var(--br);
-  max-width: 400px;
-  margin: 0 auto;
-}
-.summary-container:not(:first-child) {
-  margin-top: 10px;
-}
+
 .btn {
   width: 50%;
   height: 50px;
@@ -61,6 +27,128 @@ body {
   border: 0;
   font-size: 13px;
 }
+
+.submit-btn {
+  background: var(--light-blue-color);
+  width: 90%;
+  margin: 10px;
+  height: 30px;
+  border-radius: var(--br);
+}
+
+.container {
+  max-width: 800px;
+  margin: 0 auto;
+}
+
+.content-container {
+  border: 1px solid var(--black-color);
+  border-radius: var(--br);
+  max-width: 400px;
+  margin: 0 auto;
+}
+
+.content-container:not(:first-child) {
+  margin-top: 10px;
+}
+
+.container-header {
+  border-bottom: 1px solid var(--black-color);
+  font-weight: bold;
+  font-size: 13px;
+  padding: 10px;
+  background: var(--light-blue-color);
+  color: var(--black-color);
+}
+
+.container-bottom-container {
+  padding: 10px;
+  display: flex;
+  align-items: center;
+}
+
+.container-avatar-container {
+  width: calc(30% - 1px);
+  display: inline-block;
+  border-right: 1px solid var(--black-color);
+}
+
+.container-question-link-container {
+  width: calc(70% - 10px);
+  display: inline-block;
+  margin-left: 10px;
+}
+
+.avatar {
+  height: 100px;
+  width: 100px;
+  display: block;
+  margin: 0 auto;
+}
+
+.would-you-rather {
+  font-weight: bold;
+  font-size: 12px;
+  margin: 2px 0;
+}
+
+
+/* Nav styles */
+.nav {
+  max-width: 800px;
+  display: flex;
+  justify-content: space-between;
+  border-bottom: 1px solid var(--prussian-blue-color);
+  padding: 20px;
+  margin-bottom: 10px;
+}
+
+.nav-links {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.nav-links > div {
+  margin-right: 30px;
+}
+
+.nav-links > div > a {
+  text-decoration: none;
+  color: var(--black-color)
+}
+
+.nav-links > div > a.active {
+  color: var(--white-color);
+  background: var(--prussian-blue-color);
+  padding: 10px
+}
+
+.nav-links > div > a:hover {
+  color: var(--white-color);
+  background: var(--light-blue-color);
+  padding: 10px
+}
+
+.avatar-xs {
+  height: 30px;
+  width: 30px;
+  border-radius: 25px;
+}
+
+
+/* <QuestionSummaryList /> styles */
+.summary-list-btns-container {
+  border: 1px solid var(--black-color);
+  border-radius: var(--br);
+  max-width: 400px;
+  margin: 0 auto;
+}
+
+.summary-list-container {
+  padding: 10px;
+}
+
 .btn-unanswer {
   border-bottom: 1px solid var(--black-color);
   border-right: 1px solid var(--black-color);
@@ -70,46 +158,18 @@ body {
   border-bottom: 1px solid var(--black-color);
   border-top-right-radius: var(--br);
 }
+
 .active-list-toggle-btn {
   background: var(--light-blue-color);
 }
-.summary-author {
-  border-bottom: 1px solid var(--black-color);
-  font-weight: bold;
-  font-size: 13px;
-  padding: 10px;
-  background: var(--light-blue-color);
-  color: var(--black-color);
-}
-.summary-bottom-container {
-  padding: 10px;
-  display: flex;
-  align-items: center;
-}
-.summary-avatar-container {
-  width: calc(30% - 1px);
-  display: inline-block;
-  border-right: 1px solid var(--black-color);
-}
-.avatar {
-  height: 100px;
-  width: 100px;
-  display: block;
-  margin: 0 auto;
-}
+
+
+/* <QuestionSummary /> styles */
 .avatar-small {
   height: 50px;
   width: 50px;
 }
-.avatar-xs {
-  height: 30px;
-  width: 30px;
-}
-.summary-question-link-container {
-  width: calc(70% - 10px);
-  display: inline-block;
-  margin-left: 10px;
-}
+
 .view-full-btn {
   border: 1px solid var(--black-color);
   border-radius: var(--br);
@@ -118,24 +178,25 @@ body {
   margin: 5px auto;
   display: block;
 }
-.would-you-rather {
-  font-weight: bold;
-  font-size: 12px;
-  margin: 2px 0;
-}
+
 .wyr-question-partial {
   font-size: 12px;
   margin: 8px 0;
 }
+
+
+/* <Result /> styles */
 .result-container {
   border: 1px solid var(--black-color);
   border-radius: var(--br);
   margin: 5px 0;
   position: relative;
 }
+
 .results-header {
   margin: 0;
 }
+
 .your-vote {
   border: 1px solid var(--prussian-blue-color);
   border-radius: 25px;
@@ -148,9 +209,11 @@ body {
   font-size: 12px;
   padding: 5px;
 }
+
 .progress-container {
   padding: 0 15px;
 }
+
 progress {
   text-align: center;
   height: 1.5em;
@@ -159,6 +222,7 @@ progress {
   border: none;
   position:relative;
 }
+
 progress:before {
   content: attr(data-label);
   font-size: 0.8em;
@@ -168,24 +232,29 @@ progress:before {
   left:0;
   right:0;
 }
+
 progress::-webkit-progress-bar {
   background-color: #c9c9c9;
   border-radius: 5px;
 }
+
 progress::-webkit-progress-value {
   background-color: var(--light-blue-color);
   border-radius: 5px;
 }
+
 progress::-moz-progress-bar {
   background-color: var(--light-blue-color);
   border-radius: 5px;
 }
+
 .results-text {
   color: var(--black-color);
   font-size: 13px;
   font-weight: bold;
   padding: 5px 30px 5px 5px;
 }
+
 .result-avatar-container {
   width: calc(30% - 1px);
   display: flex;
@@ -193,73 +262,85 @@ progress::-moz-progress-bar {
   height: 200px;
   align-items: center;
 }
+
+
+/* <Login /> styles */
 .sm-header-text {
   font-weight: 100;
   font-size: 10px;
 }
+
 .tac {
   text-align: center;
 }
+
 .login-body {
   display: flex;
   flex-direction: column;
   align-items: center;
 }
+
 .react-img {
   max-width: 100px;
   margin: 10px;
 }
+
 .signin-text {
   color: var(--cerulean-color);
   font-weight: bold;
   margin: 10px;
 }
+
 .user-select {
   width: 90%;
   margin: 10px;
 }
-.login-btn {
-  background: var(--light-blue-color);
-  width: 90%;
-  margin: 10px;
-  height: 30px;
-  border-radius: var(--br);
-  /* color: var(--white-color) */
-}
+
+
+/* <NewQuestion /> styles */
 .question-input {
   width: 100%;
   border-radius: var(--br);
   height: 20px;
 }
+
 .question-inputs-container {
   display: flex;
   flex-direction: column;
   align-items: center;
 }
+
 .question-input-container {
   width: 90%;
   margin: 10px 20px;
 }
+
 .or-text {
   text-align: center;
   font-weight: bold;
   font-size: 12px;
 }
+
 .complete-question {
   margin: 10px;
   font-weight: bold;
   font-size: 10px;
 }
+
 .question-wyr {
   margin: 10px;
   font-weight: bold;
   font-size: 12px;
 }
+
+
+/* <Leaderboard /> styles */
 .leaderboard-container {
   display: flex;
   align-items:center;
   height: 100px;
 }
+
 .lb-avatar-container {
   border-right: 1px solid var(--black-color);
   height: 80px;
@@ -267,11 +348,13 @@ progress::-moz-progress-bar {
   margin: 10px 0;
   flex: 1;
 }
+
 .lb-user-data-container {
   border-right: 1px solid var(--black-color);
   flex: 2;
   padding: 10px
 }
+
 .lb-score-container {
   margin: 0 auto;
   flex: 1;
@@ -279,15 +362,17 @@ progress::-moz-progress-bar {
   flex-direction: column;
   align-items: center;
 }
+
 .lb-avatar {
   height: 75px;
   width: 75px;
 }
+
 .lb-score-text {
-  /* background: var(--light-blue-color); */
   text-align: center;
   line-height: 50px;
 }
+
 .lb-score-number-container {
   background-color: var(--prussian-blue-color);
   border-radius: 20px;
@@ -295,21 +380,25 @@ progress::-moz-progress-bar {
   margin-bottom: 8px;
   height: 44px;
 }
+
 .lb-score-number {
   color: white;
   text-align: center;
   line-height: 42px;
 }
+
 .lb-user-name {
   font-weight: bold;
   font-size: 16px;
   margin: 10px 0;
 }
+
 .lb-aq-container {
   display: flex;
   justify-content: space-between;
 }
-.lb-aq-text, .lb-aq-score {
+
+.lb-text-score {
   font-size: 10px;
   font-weight: bold;
   margin: 5px 0;

@@ -45,8 +45,16 @@ class QuestionSummaryList extends Component {
 function mapStateToProps({ questions, users, authedUser }) {
   const questionIds = Object.keys(questions)
   const userAnswers = Object.keys(users[authedUser].answers)
-  const answered = questionIds.filter((id) => userAnswers.includes(id))
-  const unanswered = questionIds.filter((id) => !userAnswers.includes(id))
+  const answered = questionIds
+    .filter((id) => userAnswers.includes(id))
+    .sort((a, b) => {
+      return questions[a].timestamp > questions[b].timestamp ? -1 : 1
+    })
+  const unanswered = questionIds
+    .filter((id) => !userAnswers.includes(id))
+    .sort((a, b) => {
+      return questions[a].timestamp > questions[b].timestamp ? -1 : 1
+    })
   return {
     answered,
     unanswered

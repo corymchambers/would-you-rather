@@ -19,9 +19,9 @@ class Result extends Component {
     const q2Voted = opt2.votes.includes(authedUser)
 
     return (
-      <div className='summary-container'>
-        <div className='summary-author'>Asked by {authorName}</div>
-        <div className='summary-bottom-container'>
+      <div className='content-container'>
+        <div className='container-header'>Asked by {authorName}</div>
+        <div className='container-bottom-container'>
           <div className='result-avatar-container'>
             <img
               src={avatarURL}
@@ -29,7 +29,7 @@ class Result extends Component {
               className='avatar'
             />
           </div>
-          <div className='summary-question-link-container'>
+          <div className='container-question-link-container'>
             <h3 className='results-header'>Results:</h3>
             <div className='result-container'>
               {q1Voted && (

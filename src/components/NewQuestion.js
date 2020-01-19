@@ -43,8 +43,8 @@ class NewQuestion extends Component {
     }
 
     return (
-      <div className='summary-container'>
-        <div className='summary-author'>Create New Question</div>
+      <div className='content-container'>
+        <div className='container-header'>Create New Question</div>
         <div className=''>
           <div className='complete-question'>Complete the question:</div>
           <div className='question-wyr'>Would you rather...</div>
@@ -71,7 +71,7 @@ class NewQuestion extends Component {
               </div>
               <button
                 type='submit'
-                className='login-btn'
+                className='submit-btn'
                 disabled={this.state.qOne === false || this.state.qTwo === false}
                 >Submit</button>
             </div>

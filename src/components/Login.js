@@ -21,8 +21,8 @@ class Login extends Component {
     const { users } = this.props
     const { userChosen } = this.state
     return (
-      <div className='summary-container'>
-        <div className='summary-author'>
+      <div className='content-container'>
+        <div className='container-header'>
           <div className='tac'>Welcome to the Would You Rather App!</div>
           <div className='sm-header-text tac'>Please sign in to continue</div>
         </div>
@@ -48,7 +48,7 @@ class Login extends Component {
             ))}
           </select>
           <button
-            className='login-btn'
+            className='submit-btn'
             disabled={userChosen === 'default'}
             onClick={this.handleSubmit}
           >Sign in</button>

@@ -1,16 +1,8 @@
 import React, { Component } from 'react'
 import { connect } from 'react-redux'
 import { NavLink } from 'react-router-dom'
-import { handleLogout } from '../actions/authedUser'
 
 class Nav extends Component {
-  handleLogoutClick = (e) => {
-    const { dispatch } = this.props
-    const user = null
-    dispatch(handleLogout({
-      user
-    }))
-  }
   render () {
     const {authedUser, users} = this.props
     const userName =  authedUser !== null ? users[authedUser].name : ''
@@ -36,7 +28,7 @@ class Nav extends Component {
         </div>
         { authedUser !== null &&
           (
-            <div className='profile-links'>
+            <div className='nav-links'>
               <div>
                 <div>Hello, {userName}</div>
               </div>
@@ -48,7 +40,9 @@ class Nav extends Component {
                 />
               </div>
               <div>
-                <button onClick={this.handleLogoutClick}>Logout</button>
+                <NavLink to='/logout' activeClassName='active'>
+                  Logout
+                </NavLink>
               </div>
             </div>
           )
@@ -58,9 +52,4 @@ class Nav extends Component {
   }
 }
 
-// Need this to get dispatch
-function mapStateToProps () {
-  return {}
-}
-
-export default connect(mapStateToProps)(Nav)
+export default Nav

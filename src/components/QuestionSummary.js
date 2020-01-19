@@ -10,17 +10,17 @@ class QuestionSummary extends Component {
     const avatarURL = users[author].avatarURL
     const text = (typeof question.optionOne.text !== 'undefined') ? question.optionOne.text.substring(0, 15) : ''
     return (
-      <div className='summary-container'>
-        <div className='summary-author'>{authorName} asks:</div>
-        <div className='summary-bottom-container'>
-          <div className='summary-avatar-container'>
+      <div className='content-container'>
+        <div className='container-header'>{authorName} asks:</div>
+        <div className='container-bottom-container'>
+          <div className='container-avatar-container'>
             <img
               src={avatarURL}
               alt={`Avatar of ${author}`}
               className='avatar avatar-small'
             />
           </div>
-          <div className='summary-question-link-container'>
+          <div className='container-question-link-container'>
             <div className='would-you-rather'>Would you rather</div>
             <div className='wyr-question-partial'>...{text}...</div>
             <Link to={`/questions/${id}`} className='link'>
